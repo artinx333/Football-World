@@ -335,6 +335,41 @@ function searchPlayers() {
   });
 }
 </script>
+function showJoao() {
+  const modal = document.createElement("div");
+  modal.id = "joaoModal";
 
+  modal.style.cssText = `
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:rgba(0,0,0,0.95);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  `;
+
+  modal.innerHTML = `
+    <div style="background:#171923;border:2px solid #e7c46a;border-radius:18px;padding:22px;width:100%;max-width:400px;text-align:center;color:white;">
+      <button onclick="document.getElementById('joaoModal').remove()" style="float:right;background:#e7c46a;border:0;padding:8px 14px;border-radius:8px;">✕</button>
+      <h2 style="color:#e7c46a;">👑 João Félix 🇵🇹</h2>
+      <p>Nationality: Portugal</p>
+      <p>Position: Forward</p>
+      <p>Club: Al Nassr</p>
+      <p>PORTUGUESE STAR ⭐</p>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+}
+
+const joaoCard = document.querySelector("#playerList .card");
+
+if (joaoCard) {
+  joaoCard.style.cursor = "pointer";
+  joaoCard.addEventListener("click", showJoao);
+}
+  
 </body>
 </html>
